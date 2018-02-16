@@ -5,17 +5,21 @@ module.exports = function (config) {
         files: [
             './node_modules/angular/angular.js',
             './node_modules/angular-mocks/angular-mocks.js',
+            //search directive
             './scripts/directive/search/search-dir.js',
             './scripts/directive/search/controller/search-controller.js',
             './scripts/directive/search/service/search-svc.js',
+            // report directive
             './scripts/directive/report/report-dir.js',
+            // site files
             './scripts/script.js',
             './scripts/controller/site-controller.js',
+            // spec files
             './tests/controller/site-controller.spec.js',
             './tests/directive/search/search-controller.spec.js',
-            './tests/directive/search/search-svc.spec.js'
+            './tests/directive/search/search-svc.spec.js',
+            './tests/directive/report/report-dir.spec.js',
         ],
-        //C:\Users\yyn6oq\Documents\NetBeansProjects\J2EE_Angular\web\scripts\directive\search\controller\search-controller.js
         exclude: [
 
         ],

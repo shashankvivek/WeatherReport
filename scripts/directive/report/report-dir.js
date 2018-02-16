@@ -8,17 +8,17 @@
 (function () {
     angular.module('weather.report', [])
 
-            .directive('report', function () {
-                return {
-                    restrict: 'E',
-                    controller: 'ReportController',
-                    templateUrl: 'scripts/directive/report/report.html',
-                }
-            })
+        .directive('report', function () {
+            return {
+                restrict: 'E',
+                controller: 'ReportController',
+                templateUrl: 'scripts/directive/report/report.html',
+            }
+        })
 
-            .controller('ReportController', function ($scope,$rootScope) {
-                $rootScope.$on('show-report',function (event,data){
-                    $scope.data = data;
-                })
+        .controller('ReportController', function ($scope, $rootScope) {
+            $rootScope.$on('show-report', function (event, data) {
+                $scope.data = data;
             })
+        })
 })()
