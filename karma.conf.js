@@ -14,11 +14,14 @@ module.exports = function (config) {
             // site files
             './scripts/script.js',
             './scripts/controller/site-controller.js',
+            // filter
+            './scripts/filter/date-time-filter.js',
             // spec files
             './tests/controller/site-controller.spec.js',
             './tests/directive/search/search-controller.spec.js',
             './tests/directive/search/search-svc.spec.js',
             './tests/directive/report/report-dir.spec.js',
+            './tests/filter/date-time-filter.spec.js'
         ],
         exclude: [
 
