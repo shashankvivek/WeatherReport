@@ -5,8 +5,9 @@
  */
 
 
-angular.module('weather.search').controller('SearchController', function ($scope, $http, $rootScope,SearchService) {
+angular.module('weather.search').controller('SearchController', function ($scope, $rootScope, SearchService) {
 
+    $scope.locations = [];
     init();
     $scope.searchText = {
         data: '',
@@ -18,12 +19,12 @@ angular.module('weather.search').controller('SearchController', function ($scope
         if ($scope.valid_search_text_length) {
             $scope.in_focus = false;
             SearchService.getWeatherReport($scope.searchText.obj.id)
-                    .then(function (success) {
-                        $rootScope.$emit('show-report', success.data);
-                    }, function (error) {
-                        console.error(error);
-                        alert('There was some error while fetching the Weather Report')
-                    })
+                .then(function (success) {
+                    $rootScope.$emit('show-report', success.data);
+                }, function (error) {
+                    console.error(error);
+                    alert('There was some error while fetching the Weather Report')
+                })
         } else {
             alert('Please select a location!')
         }
@@ -61,11 +62,12 @@ angular.module('weather.search').controller('SearchController', function ($scope
 
     function init() {
         SearchService.getLocationList()
-                .then(function (success) {
-                    $scope.locations = success.data;
-                }, function (error) {
-                    console.error(error);
-                    alert('There has been some error fetching location details.')
-                })
+            .then(function (success) {
+                $scope.locations = success.data;
+            }, function (error) {
+                console.error(error);
+                $scope.error = error.data;
+                alert('There has been some error fetching location details.')
+            })
     }
 });

@@ -12,7 +12,8 @@ module.exports = function (config) {
             './scripts/script.js',
             './scripts/controller/site-controller.js',
             './tests/controller/site-controller.spec.js',
-            './tests/directive/search/search-controller.spec.js'
+            './tests/directive/search/search-controller.spec.js',
+            './tests/directive/search/search-svc.spec.js'
         ],
         //C:\Users\yyn6oq\Documents\NetBeansProjects\J2EE_Angular\web\scripts\directive\search\controller\search-controller.js
         exclude: [
@@ -20,8 +21,8 @@ module.exports = function (config) {
         ],
         preprocessors: {
         },
-        reporters: ['progress'],
-        //reporters: ['spec'],
+        // reporters: ['progress'],
+        reporters: ['spec'],
 
         port: 9876,
         colors: true,
